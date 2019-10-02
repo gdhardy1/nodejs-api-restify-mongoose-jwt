@@ -13,6 +13,8 @@ This project focuses on creating a RESTful API to create, read, update, and dele
 - JSON Web Tokens
 - Bcrypt
 
+<br></br>
+
 # Documentation
 
 ## Open Endpoints
@@ -28,8 +30,11 @@ Method: `POST`
 
 **Request**
 
-Body: `{ "email": "valid email", "password": "plain text password" }`
-<br></br>
+Body:
+
+```javascript
+{ "email": String (required), "password": String (required)}
+```
 
 **Response**
 
@@ -37,14 +42,18 @@ Code: 200 OK
 
 Body:
 
-`{ "iat": token issue time, "exp": token expiration time, "token": token }`
-<br></br>
+```json
+{ "iat": "token issue time", "exp": "token expiration time", "token": "token" }
+```
 
 Code: 401 Unauthorized
 
 Body:
 
-`{ "code": "Unauthorized", "message": "Authentication Failed" }`
+```json
+{ "code": "Unauthorized", "message": "Authentication Failed" }
+```
+
 <br></br>
 
 ### Register User
@@ -56,15 +65,17 @@ Method: `POST`
 
 **Request**
 
-Body: `{ "email": "valid email", "password": "plain text password" }`
-<br></br>
+Body:
+
+```javascript
+{ "email": String (required), "password": String (required)}
+```
 
 **Response**
 
 Code: 201 Created
 
 Body: None
-
 <br></br>
 
 ## Closed Endpoints
@@ -84,6 +95,53 @@ Method: `GET`
 Code: 200 OK
 
 Body:
-`[ { "balance": Number, "_id": "String - userID ", "name": "String - User Name", "email": "String - user@email.com", "updatedAt": "timestamp", "createdAt": "timestamp", "__v": 0 } ]`
+
+```javascript
+[
+    {
+        balance: Number,
+        _id: String "userID",
+        name: String "User Name",
+        email: String "user@email.com",
+        updatedAt: Date "timestamp",
+        createdAt: Date "timestamp",
+        __v: 0
+    }
+]
+```
 
 <br></br>
+
+### Add Customer
+
+URL: `/customers`
+
+Method: `POST`
+
+<br></br>
+**Request**
+Body:
+
+```javascript
+{
+  name: String (required), email: String (required), balance: Number;
+}
+```
+
+**Response**
+
+Code: 201 Created
+
+Body:
+
+```javascript
+{
+    balance: Number,
+    _id: String "userID",
+    name: String "User Name",
+    email: String "user@email.com",
+    updatedAt: Date "timestamp",
+    createdAt: Date "timestamp",
+    __v: 0
+}
+```
