@@ -17,9 +17,15 @@ This project focuses on creating a RESTful API to create, read, update, and dele
 
 # Documentation
 
+Test out the endpoints by sending requests to [https://young-fjord-31074.herokuapp.com](https://young-fjord-31074.herokuapp.com).
+
+**Unprotected**
+
 [Login](#login)
 
 [Register](#register)
+
+**Protected**
 
 [Get All Customers](#allCust)
 
