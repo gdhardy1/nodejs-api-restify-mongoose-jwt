@@ -17,11 +17,24 @@ This project focuses on creating a RESTful API to create, read, update, and dele
 
 # Documentation
 
+[Login](#login)
+
+[Register](#register)
+
+[Get All Customers](#allCust)
+
+[Get Customer by ID](#custById)
+
+[Add Customer](#addCust)
+
+[Delete Customer](#delCust)
+<br></br>
+
 ## Open Endpoints
 
 Open endpoints require no Authentication.
 
-### User Login
+### <a name="login"></a> User Login
 
 URL: `/login`
 
@@ -56,7 +69,7 @@ Body:
 
 <br></br>
 
-### Register User
+### <a name="register"></a> Register User
 
 URL: `/register`
 
@@ -84,7 +97,7 @@ Closed endpoints require a valid Token to be included in the header of the
 request. Header shall use the `Authorization: Bearer <token>` schema. Token can be retrieved from a succesful user login.
 <br></br>
 
-### Get All Customers
+### <a name="allCust"></a>Get All Customers
 
 URL: `/customers`
 
@@ -113,7 +126,7 @@ Body:
 
 <br></br>
 
-### Get Customer by ID
+### <a name="custById"></a>Get Customer by ID
 
 URL: `/customers/:id`
 
@@ -142,7 +155,7 @@ Code: `204 No Content`
 
 <br></br>
 
-### Add Customer
+### <a name="addCust"></a>Add Customer
 
 URL: `/customers`
 
@@ -179,7 +192,7 @@ Body:
 
 <br></br>
 
-### Delete Customer
+### <a name="delCust"></a>Delete Customer
 
 URL: `/customers/:id`
 
