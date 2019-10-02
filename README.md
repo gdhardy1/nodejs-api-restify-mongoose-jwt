@@ -38,7 +38,7 @@ Body:
 
 **Response**
 
-Code: 200 OK
+Code: `200 OK`
 
 Body:
 
@@ -46,7 +46,7 @@ Body:
 { "iat": "token issue time", "exp": "token expiration time", "token": "token" }
 ```
 
-Code: 401 Unauthorized
+Code: `401 Unauthorized`
 
 Body:
 
@@ -73,7 +73,7 @@ Body:
 
 **Response**
 
-Code: 201 Created
+Code: `201 Created`
 
 Body: None
 <br></br>
@@ -82,6 +82,7 @@ Body: None
 
 Closed endpoints require a valid Token to be included in the header of the
 request. Header shall use the `Authorization: Bearer <token>` schema. Token can be retrieved from a succesful user login.
+<br></br>
 
 ### Get All Customers
 
@@ -92,7 +93,7 @@ Method: `GET`
 
 **Response**
 
-Code: 200 OK
+Code: `200 OK`
 
 Body:
 
@@ -112,6 +113,35 @@ Body:
 
 <br></br>
 
+### Get Customer by ID
+
+URL: `/customers/:id`
+
+Method: `GET`
+
+Parameters:
+
+`:id - userID _id`
+<br></br>
+
+**Response**
+
+Code: `204 No Content`
+
+```javascript
+{
+    balance: Number,
+    _id: String "userID",
+    name: String "User Name",
+    email: String "user@email.com",
+    updatedAt: Date "timestamp",
+    createdAt: Date "timestamp",
+    __v: 0
+}
+```
+
+<br></br>
+
 ### Add Customer
 
 URL: `/customers`
@@ -120,6 +150,7 @@ Method: `POST`
 
 <br></br>
 **Request**
+
 Body:
 
 ```javascript
@@ -130,7 +161,7 @@ Body:
 
 **Response**
 
-Code: 201 Created
+Code: `201 Created`
 
 Body:
 
@@ -145,3 +176,22 @@ Body:
     __v: 0
 }
 ```
+
+<br></br>
+
+### Delete Customer
+
+URL: `/customers/:id`
+
+Method: `DELETE`
+
+Parameters:
+
+`:id - userID _id`
+<br></br>
+
+**Response**
+
+Success
+
+Code: `204 No Content`
