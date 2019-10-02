@@ -16,8 +16,10 @@ server.listen(config.PORT, () => {
     .catch(e => console.log(e));
 });
 
-// Protect all routes except login route
-server.use(rjwt({ secret: config.JWT_SECRET }).unless({ path: ["/login"] }));
+// Protect all routes except login and register route
+server.use(
+  rjwt({ secret: config.JWT_SECRET }).unless({ path: ["/login", "/register"] })
+);
 
 // Default database connection
 const db = mongoose.connection;
